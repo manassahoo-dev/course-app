@@ -1,24 +1,15 @@
 {
+  "private": true,
   "name": "course-app",
-  "version": "1.0.0",
-  "description": "Course App",
   "workspaces": [
-    "backend",
-    "frontend"
+    "packages/*"
   ],
   "scripts": {
-    "start:backend": "cd backend && npm start",
-    "start:frontend": "cd frontend && npm start",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "build:backend": "cd backend && npm run build",
-    "build:frontend": "cd frontend && npm run build",
-    "build": "concurrently \"npm run build:backend\" \"npm run build:frontend\""
+    "client": "yarn workspace @course-app/client start",
+    "server": "yarn workspace @course-app/server start",
+    "start": "concurrently --kill-others-on-fail \"yarn server\"  \"yarn client\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^8.2.0"
   }
 }
