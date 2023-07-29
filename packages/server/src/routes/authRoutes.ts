@@ -1,11 +1,11 @@
 import bcrypt from 'bcrypt';
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
 const router = express.Router();
 
-router.post('/signup', async (req, res) => {
+router.post('/signup', async (req: Request, res: Response) => {
   try {
     const { username, password } = req.body;
 
@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', async (req: Request, res: Response) => {
   try {
     const { username, password } = req.body;
 
