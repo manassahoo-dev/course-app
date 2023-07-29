@@ -12,7 +12,7 @@ router.post('/signup', async (req: Request, res: Response) => {
     if (!username || !password) {
       return res
         .status(400)
-        .json({ message: 'Username and password are required' });
+        .json({ message: 'Username and password required' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
