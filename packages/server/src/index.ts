@@ -26,12 +26,7 @@ mongoose
   .connect(mongoUri)
   .then(async () => {
     console.log('Connected to MongoDB');
-
-    const collectionExists = await User.exists();
-    if (!collectionExists) {
-      await User.createCollection();
-      console.log('Users collection created.');
-    }
+    console.log('Users collection created.');
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
