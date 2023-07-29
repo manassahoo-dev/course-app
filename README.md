@@ -1,1 +1,1 @@
-Course App
+Course Course App
