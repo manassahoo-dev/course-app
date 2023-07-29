@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "course-app",
+  "description": "Sample MERN App",
   "workspaces": [
     "packages/*"
   ],
